@@ -1,0 +1,18 @@
+name,value,units,description
+scaling_parameter,84.70147817,mm,TOPMODEL-specific parameter
+saturated_hydraulic_conductivity,1044.550692,mm/day,saturated hydraulic conductivity of the soil profile
+saturated_hydraulic_conductivity_multiplier,5.602676269,unitless,controls the rate of decline of conductivity in the soil profile
+soil_depth_total,1188.491954,mm,thickness of hydrologically-active soil
+field_capacity_fraction,0.287855887,fraction,proportion of soil profile that retains water at field capacity
+porosity_fraction,0.383803345,fraction,proportion of soil profile that is pore space
+wilting_point_fraction,0.151383589,fraction,proportion of soil profile that retains water at wilting point
+latitude,39.32591846,degrees,centroid latitude of basin
+basin_area_total,125.19,sq km,total basin area
+impervious_area_fraction,1.230529595,percentage,used to calculate runoff from impervious surface
+channel_length_max,2,km,estimate used to initialize simulation
+channel_velocity_avg,10,km/day,estimate used to initialize simulation
+flow_initial,0.1,mm/day,estimate used to initialize simulation
+stream area,1.5037,sq km,total stream surface area
+lake_area,0,sq km,total water-body surface area
+up_lake_area,0,sq km,basin area upstream of water bodies
+rip_area,1.5037,sq km,total riparian area

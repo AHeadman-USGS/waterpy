@@ -1,0 +1,16 @@
+name,value,units,description
+spatial_coeff,0.4,dimensionless,optimizes the scaling parameter
+rooting_depth_factor,0.75,dimensionless,proportion of soil thickness used for evapotranspiration
+macropore_fraction,0.15,fraction,fraction of precipitation that can bypass the unsaturated subsurface zone and move directly into the saturated subsurface zone
+impervious_curve_number,90,dimensionless,TR55 parameter
+snowmelt_temperature_cutoff,0,degrees Celsius,temperature cutoff for snow accumulation and melt
+snowmelt_rate_coeff,0.2,mm/degC,controls rate of snow melt
+snowmelt_rate_coeff_with_rain,0.3,mm/degC,controls rate of snow melt when raining
+pet_calib_coeff,1.2,dimensionless,pet hamon calibration coefficient (KPEC) initially set to 1.2 for Southeastern United States
+lake_delay,15,days,estimated time for water to move through lake
+eff_imp,0.7,decimal,adjusts the percent impervious for land cover
+imp_delay,0.1,decimal,proportion of precipitation delayed to next day from impervious surface and associated runoff
+twi_adj,1,unitless,decreases importance of topography
+et_exp_dorm,5,unitless,minimizes evapotranspiration during dormant season
+et_exp_grow,0.5,unitless,maximizes evapotranspiration during dormant season
+grow_trigger,15,degC,temperature transition to/from growing season for ET Exp and AMC.

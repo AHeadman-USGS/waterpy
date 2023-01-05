@@ -1,0 +1,9 @@
+name,value,units,description
+spatial_coeff,0.1,dimensionless,used to calculate the scaling parameter
+rooting_depth_factor,0.25731252,dimensionless,proportion of soil thickness used for evapotranspiration
+macropore_fraction,0.2,fraction,fraction of precipitation that can bypass the unsaturated subsurface zone and move directly into the saturated subsurface zone
+impervious_curve_number,98,dimensionless,TR55 parameter
+snowmelt_temperature_cutoff,32,degrees fahrenheit,temperature cutoff for snowpack accumulation and snowmelt
+snowmelt_rate_coeff,3,1/degrees fahrenheit,used to control rate of snow melt
+snowmelt_rate_coeff_with_rain,8.23,inches per degree fahrenheit,used to control rate of snow melt when raining
+pet_calib_coeff,1.2,dimensionless,pet hamon calibration coefficient (KPEC) initially set to 1.2 for Southeastern United States

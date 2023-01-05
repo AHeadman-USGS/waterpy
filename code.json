@@ -1,0 +1,45 @@
+[
+  {
+    "name": "WaterPy",
+    "organization": "U.S. Geological Survey",
+    "description": "waterpy is a rainfall-runoff model that predicts the amount of water flow in rivers. Waterpy is a command line application written in Python using Click",
+    "version": "0.1.0",
+    "status": "RELEASED",
+
+    "permissions": {
+      "usageType": "openSource",
+      "licenses": [
+        {
+          "name": "Public Domain, CC0-1.0",
+          "URL": "https://code.usgs.gov/aheadman/waterpy/-/blob/main/LICENSE"
+        }
+      ]
+    },
+
+    "downloadURL": "https://code.usgs.gov/aheadman/waterpy/-/archive/main/waterpy-main.zip",
+    "disclaimerURL": "https://github.com/usgs/REPOSITORY_NAME/blob/master/LICENSE.md",
+    "repositoryURL": "https://code.usgs.gov/aheadman/waterpy.git",
+    "vcs": "git",
+
+    "laborHours": 0,
+
+    "tags": [
+      "streamflow",
+      "TopModel"
+    ],
+
+    "languages": [
+      "python",
+      "html"
+    ],
+
+    "contact": {
+      "name": "Alexander Headman",
+      "email": "AHeadman@usgs.gov"
+    },
+
+    "date": {
+      "metadataLastUpdated": "2022-09-26"
+    }
+  }
+]

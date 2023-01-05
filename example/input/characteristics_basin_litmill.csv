@@ -1,0 +1,25 @@
+name,value,units,description
+scaling_parameter,109.5930471,millimeters,controls the rate of decline of transmissivity in the soil profile
+saturated_hydraulic_conductivity,2263.500936,millimeters/day,saturated hydraulic conductivity of the C horizon of the soil
+saturated_hydraulic_conductivity_multiplier,7330.725854,unitless,multiplier to apply to saturated hydraulic conductivity 
+soil_depth_total,1165.897408,mm,total soil depth - could be 90 cm for tile depth
+soil_depth_ab_horizon,0.5,mm,soil depth of AB horizon - 25% thickness
+field_capacity_fraction,0.200763092,fraction,fraction of soil moisture or water content in the soil after excess water has drained away
+porosity_fraction,0.324976444,fraction,fraction of soil that is porous and is always larger than field_capacity_fraction
+wilting_point_fraction,0.08143,fraction,fraction amount of the minimal amount of water in the soil that plants require not to wilt
+latitude,37.47711236,degrees,mean latitude of basin
+basin_area_total,0.792983188,square kilometers,total basin area
+impervious_area_fraction,0.000437579,percentage,fraction of impervious area of basin
+channel_length_max,1.98,kilometers,maximum channel length
+channel_velocity_avg,10,kilometers/day,average channel velocity
+flow_initial,0.1,millimeters/day,initial river flow
+lake_area,0,square kilometers,total water body surface area
+twi_adj,1000,unitless,Adjustment for magnitude of TWI - must be >= 1.
+eff_imp,1,fraction,Multiplier to address connectivity of impervious surface to stream network.
+et_exp_dorm,0.9,unitless,Evapotranspiration Exponent for non-growing season.
+et_exp_grow,2,unitless,Evapotranspiration Exponent for growing season.
+grow_trigger,15,temperature (celsius), Temperature (C) transition to/from growing season for ET Exp and AMC.
+rip_area,0,square kilometers,Estimated sqkm of riparian area.
+lake_delay,0,days,
+up_lake_area,0,square kilometers,
+imp_delay,0.1,days,

@@ -1,0 +1,358 @@
+"""Exceptions for topmodel.py
+"""
+
+
+class TopmodelpyException(Exception):
+    """
+    Base exception class.  All custom exceptions subclass this class.
+    """
+    def __str__(self):
+        return self.message
+
+
+class ModelConfigFileErrorInvalidSection(TopmodelpyException):
+    """
+    Raised when a model config file does not contain required sections.
+    """
+    def __init__(self, invalid_sections, valid_sections):
+        self.message = (
+            "Error with model config file.\n"
+            "Invalid section(s):\n"
+            "  {}\n"
+            "Valid sections are:\n"
+            "  {}\n".format(invalid_sections, valid_sections)
+        )
+
+
+class ModelConfigFileErrorInvalidFilePath(TopmodelpyException):
+    """
+    Raised when a model config file does not contain vaild file paths.
+    """
+    def __init__(self, filepath):
+        self.message = (
+            "Error with model config file.\n"
+            "Invalid file path:\n"
+            "  {}".format(filepath)
+        )
+
+
+class ModelConfigFileErrorInvalidOption(TopmodelpyException):
+    """
+    Raised when a model config file does not contain valid options.
+    """
+    def __init__(self, invalid_options, valid_options):
+        self.message = (
+            "Error with model config file.\n"
+            "Invalid option(s):\n"
+            "  option_pet = {pet}\n"
+            "  option_snowmelt = {snowmelt}\n"
+            "".format(**invalid_options)
+        )
+        self.message = self.message + (
+            "Valid options (contained in each respective list):\n"
+            "  option_pet = {pet}\n"
+            "  option_snowmelt = {snowmelt}\n"
+            "".format(**valid_options)
+        )
+
+
+class ParametersFileErrorInvalidHeader(TopmodelpyException):
+    """
+    Raised when a file is not a properly formatted parameters csv file.
+    """
+    def __init__(self, invalid_header, valid_header):
+        self.message = (
+            "Error with parameters file.\n"
+            "Invalid header:\n"
+            "  {}\n"
+            "Valid header:\n"
+            "  {}\n"
+            "".format(invalid_header, valid_header)
+        )
+
+
+class ParametersFileErrorInvalidScalingParameter(TopmodelpyException):
+    """
+    Raised when a file is not a properly formatted parameters csv file.
+    """
+    def __init__(self, invalid_value):
+        self.message = (
+            "Error with parameters file.\n"
+            "Invalid scaling parameter:\n"
+            "  {}\n"
+            "Valid scaling parameter:\n"
+            "  scaling_parameter > 0\n"
+            "".format(invalid_value)
+        )
+
+
+class ParametersFileErrorInvalidLatitude(TopmodelpyException):
+    """
+    Raised when a file is not a properly formatted parameters csv file.
+    """
+    def __init__(self, invalid_value):
+        self.message = (
+            "Error with parameters file.\n"
+            "Invalid latitude:\n"
+            "  {}\n"
+            "Valid latitude:\n"
+            "  0 <= latitude <= 90\n"
+            "".format(invalid_value)
+        )
+
+
+class ParametersFileErrorInvalidSoilDepthTotal(TopmodelpyException):
+    """
+    Raised when a file is not a properly formatted parameters csv file.
+    """
+    def __init__(self, invalid_value):
+        self.message = (
+            "Error with parameters file.\n"
+            "Invalid soil depth total:\n"
+            "  {}\n"
+            "Valid soil depth total:\n"
+            "  soil_depth_total > 0\n"
+            "".format(invalid_value)
+        )
+
+
+class ParametersFileErrorInvalidSoilDepthAB(TopmodelpyException):
+    """
+    Raised when a file is not a properly formatted parameters csv file.
+    """
+    def __init__(self, invalid_value, soil_depth_total):
+        self.message = (
+            "Error with parameters file.\n"
+            "Invalid soil depth ab horizon:\n"
+            "  {}\n"
+            "Valid soil depth ab horizon:\n"
+            "  soil_depth_ab_horizon > 0\n"
+            "  soil_depth_ab_horizon < {} (soil_depth_total)\n"
+            "".format(invalid_value, soil_depth_total)
+        )
+
+
+class ParametersFileErrorInvalidFieldCapacity(TopmodelpyException):
+    """
+    Raised when a file is not a properly formatted parameters csv file.
+    """
+    def __init__(self, invalid_value):
+        self.message = (
+            "Error with parameters file.\n"
+            "Invalid field capacity:\n"
+            "  {}\n"
+            "Valid field capacity:\n"
+            "  0 <= field_capacity_fraction <=1\n"
+            "".format(invalid_value)
+        )
+
+
+class ParametersFileErrorInvalidMacropore(TopmodelpyException):
+    """
+    Raised when a file is not a properly formatted parameters csv file.
+    """
+    def __init__(self, invalid_value):
+        self.message = (
+            "Error with parameters file.\n"
+            "Invalid macropore:\n"
+            "  {}\n"
+            "Valid macropore:\n"
+            "  0 <= macropore_fraction <=1\n"
+            "".format(invalid_value)
+        )
+
+
+class ParametersFileErrorInvalidImperviousArea(TopmodelpyException):
+    """
+    Raised when a file is not a properly formatted parameters csv file.
+    """
+    def __init__(self, invalid_value):
+        self.message = (
+            "Error with parameters file.\n"
+            "Invalid impervious area:\n"
+            "  {}\n"
+            "Valid impervious area:\n"
+            "  0 <= imprevious_area_fraction <=1\n"
+            "".format(invalid_value)
+        )
+
+
+class ParametersFileErrorInvalidFieldCapacityWiltingPoint(TopmodelpyException):
+    """
+    Raised when a file is not a properly formatted parameters csv file.
+    """
+    def __init__(self, invalid_field_capacity, invalid_wilting_point):
+        self.message = (
+            "Error with parameters file.\n"
+            "Invalid field capacity or wilting point:\n"
+            "  field_capacity_fraction: {0}\n"
+            "  wilting_point_fraction: {1}\n"
+            "Valid field capacity or wilting point:\n"
+            "  field_capacity_fraction > witing_point_fraction\n"
+            "".format(invalid_field_capacity, invalid_wilting_point)
+        )
+
+
+class ParametersFileErrorInvalidFieldCapacityPorosity(TopmodelpyException):
+    """
+    Raised when a file is not a properly formatted parameters csv file.
+    """
+    def __init__(self, invalid_field_capacity, invalid_porosity):
+        self.message = (
+            "Error with parameters file.\n"
+            "Invalid field capacity or porosity:\n"
+            "  field_capacity_fraction: {0}\n"
+            "  porosity_fraction: {1}\n"
+            "Valid field capacity or wilting point:\n"
+            "  porosity_fraction > field_capacity_fraction \n"
+            "".format(invalid_field_capacity, invalid_porosity)
+        )
+
+
+class TimeseriesFileErrorInvalidHeader(TopmodelpyException):
+    """
+    Raised when a file is not a properly formatted timeseries csv file.
+    """
+    def __init__(self, invalid_header, valid_header):
+        self.message = (
+            "Error with timeseries file.\n"
+            "Invalid header:\n"
+            "  {}\n"
+            "Valid header:\n"
+            "  {}\n"
+            "".format(invalid_header, valid_header)
+        )
+
+
+class TimeseriesFileErrorMissingValues(TopmodelpyException):
+    """
+    Raised when a file is not a properly formatted timeseries csv file.
+    """
+    def __init__(self, missing_values, timestamps_near_missing):
+        self.message = (
+            "Error with timeseries file.\n"
+            "Missing values:\n"
+            "  {}\n"
+            "Near data:\n"
+            "  {}\n"
+            "".format(missing_values, timestamps_near_missing)
+        )
+
+
+class TimeseriesFileErrorMissingDates(TopmodelpyException):
+    """
+    Raised when a file is not a properly formatted timeseries csv file.
+    """
+    def __init__(self, timestamps_near_missing):
+        self.message = (
+            "Error with timeseries file.\n"
+            "Missing dates near:\n"
+            "  {}\n"
+            "".format(timestamps_near_missing)
+        )
+
+
+class TimeseriesFileErrorInvalidTimestep(TopmodelpyException):
+    """
+    Raised when a file is not a properly formatted timeseries csv file.
+    """
+    def __init__(self, invalid_timestep):
+        self.message = (
+            "Error with timeseries file.\n"
+            "Invalid timestep:\n"
+            "  {}\n"
+            "Valid timestep:\n"
+            "  timestep <= 1 (sub-daily or daily)\n"
+            "".format(invalid_timestep)
+        )
+
+
+class TwiFileErrorInvalidHeader(TopmodelpyException):
+    """
+    Raised when a file is not a properly formatted twi csv file.
+    """
+    def __init__(self, invalid_header, valid_header):
+        self.message = (
+            "Error with twi file.\n"
+            "Invalid header:\n"
+            "  {}\n"
+            "Valid header:\n"
+            "  {}\n"
+            "".format(invalid_header, valid_header)
+        )
+
+
+class TwiFileErrorMissingValues(TopmodelpyException):
+    """
+    Raised when a file is not a properly formatted twi csv file.
+    """
+    def __init__(self, missing_values):
+        self.message = (
+            "Error with twi file.\n"
+            "Missing values:\n"
+            "  {}\n"
+            "".format(missing_values)
+        )
+
+
+class TwiFileErrorInvalidProportion(TopmodelpyException):
+    """
+    Raised when a file is not a properly formatted twi csv file.
+    """
+    def __init__(self, invalid_proportion):
+        self.message = (
+            "Error with twi file.\n"
+            "Invalid sum of proportion column:\n"
+            "  {}\n"
+            "Valid sum of proportion column:\n"
+            "  1.0\n"
+            "".format(invalid_proportion)
+        )
+
+
+class ParametersFileErrorInvalidTwiAdj(TopmodelpyException):
+    """
+    Raised when a negative value is given for TWI Adjustment parameter.
+    """
+    def __init__(self, invalid_value):
+        self.message = (
+            "Error in basin characteristics.\n"
+            "Invalid twi_adj parameter:\n"
+            "Value is {}".format(invalid_value)
+        )
+
+
+class ParameterFileErrorInvalidEtExpDorm(TopmodelpyException):
+    """
+    Raised when a negative value is given for ET exp dormant parameter.
+    """
+    def __init__(self, invalid_value):
+        self.message = (
+            "Error in basin characteristics.\n"
+            "Invalid et_exp_dorm parameter:\n"
+            "Value is {}".format(invalid_value)
+        )
+
+
+class ParameterFileErrorInvalidEtExpGrow(TopmodelpyException):
+    """
+    Raised when a negative value is given for ET exp growing parameter.
+    """
+    def __init__(self, invalid_value):
+        self.message = (
+            "Error in basin characteristics.\n"
+            "Invalid et_exp_grow parameter:\n"
+            "Value is {}".format(invalid_value)
+        )
+
+
+class ParameterFileErrorEffImp(TopmodelpyException):
+    """
+    Raised when a value <0 or >1 is given for effective impervious.
+    """
+    def __init__(self, invalid_value):
+        self.message = (
+            "Error in basin characteristics.\n"
+            "Invalid eff_imp parameter:\n"
+            "Value is {}".format(invalid_value)
+        )

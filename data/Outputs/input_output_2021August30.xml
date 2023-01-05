@@ -1,0 +1,871 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<metadata>
+  <idinfo>
+    <citation>
+      <citeinfo>
+        <origin/>
+        <pubdate/>
+        <title>input and output files</title>
+        <geoform>csv files</geoform>
+        <onlink>: https://doi.org/10.5066/P9AQH027</onlink>
+      </citeinfo>
+    </citation>
+    <descript>
+      <abstract>In 2009, the Kentucky Water Science Center completed the Water Availability Tool for Environmental Resources (WATER-KY), which provided the ability to simulate streamflow for the period 1980-2000. This model integrated TOPMODEL (Beven and Kirkby, 1979) for pervious portions of the landscape with simulation of flow generated from impervious surfaces (USDA, 1986). Associated products included a flow-duration curve, load-duration curves when water-quality data were available, and general water balance.  WATER-KY required a dedicated ArcGIS license with the Spatial Analyst extension, which made it difficult to use for some cooperators and limited integration with other hydrologic approaches. This new version translates the abilities of WATER to a format that can be used without proprietary software or local updating of software. Additional functionality has also been added to include hydrologic response units (HRUs) that are defined based on three fundamental land-use categories: forest, agricultural land, and developed areas, based on subsequent development of WATER for the Delaware Basin (Williamson and others, 2015).
+Beven, K.J., and Kirkby, M.J., 1979, A physically based, variable contributing area model of basin hydrology / Un modèle à base physique de zone d'appel variable de l'hydrologie du bassin versant: Hydrological Sciences Bulletin v. 24, p. 43-69, http://dx.doi.org/10.1080/02626667909491834.
+
+U.S. Department of Agriculture [USDA], 1986, Urban hydrology for small watersheds: Natural Resources Conservation Service, Conservation Engineering Division, Technical Release 55, Revised June 1986, Update of Appendix A January 1999, https://www.nrcs.usda.gov/Internet/FSE_DOCUMENTS/stelprdb1044171.pdf.
+
+Williamson, T.N., Lant, J.G., Claggett, P.R., Nystrom, E.A., Milly, P.C.D., Nelson, H.L., Hoffman, S.A., Colarullo, S.J., and Fischer, J.M., 2015, Summary of hydrologic modeling for the Delaware River Basin using the Water Availability Tool for Environmental Resources (WATER): U.S. Geological Survey Scientific Investigations Report 2015–5143, 68 p., http://dx.doi.org/10.3133/sir20155143.<abstract/>
+      <purpose>Multiple spatial data sets (topographic, soils, climate) for the basin of interest are sampled from the provided database using the geospatial.py process provided with WATER and a basin shapefile provided by the user. Alternatively, representative data can be provided by the user.  Basin-specific data are provided to the tool as the "basin_characteristics.csv" and the "twi.csv". Additionally, the user must select a hydrologic response unit parameterization (parameters_forested, parameters_agricultural, or parameters_developed) based on the most abundant land use in the basin. No domain ranges are provided for the basin_characteristics because these are site specific. This simplified metadata is being provided as a template of what is used to inform simulations. Source data and metadata are provided with the database.
+	  Output from the tool is in a time series that covers the duration of time included in the precipitation and temperature record, less one year that is used to initialize the model. Numerical values will vary as a function of the area of interest and the time period that is simulated, so no ranges are included. This simplified metadata is being provided as an explanation of what variables are provided by the simulation.
+	  <purpose/>
+    </descript>
+    <timeperd>
+      <timeinfo>
+        <rngdates>
+          <begdate/>
+          <enddate/>
+        </rngdates>
+      </timeinfo>
+      <current>August 2021</current>
+    </timeperd>
+    <status>
+      <progress>Complete</progress>
+      <update>None planned</update>
+    </status>
+    <keywords>
+      <theme>
+        <themekt>USGS Thesaurus</themekt>
+        <themekey>geospatial datasets</themekey>
+        <themekey>streamflow modeling</themekey>
+        <themekey>water budget</themekey>
+        <themekey>land use and land cover</themekey>
+        <themekey>soils</themekey>
+      </theme>
+      <temporal>
+        <tempkt>USGS Thesaurus</tempkt>
+        <tempkey>Holocene</tempkey>
+        <tempkey>Anthropocene</tempkey>
+      </temporal>
+    </keywords>
+    <accconst>Please see 'Distribution Info' for details.</accconst>
+    <useconst>Users are advised to read the dataset's metadata thoroughly to understand appropriate use and data limitations.</useconst>
+    <ptcontac>
+      <cntinfo>
+        <cntperp>
+          <cntper>Tanja N. Williamson</cntper>
+          <cntorg>MIDCONTINENT REGION: OHIO-KENTUCKY-INDIANA WSC</cntorg>
+        </cntperp>
+        <cntpos>Research Hydrologist</cntpos>
+        <cntaddr>
+          <addrtype>mailing and physical</addrtype>
+          <address>9818 Bluegrass Parkway</address>
+          <city>Louisville</city>
+          <state>KY</state>
+          <postal>40299-1906</postal>
+          <country>United States</country>
+        </cntaddr>
+        <cntvoice>502-493-1934</cntvoice>
+        <cntemail>tnwillia@usgs.gov</cntemail>
+      </cntinfo>
+    </ptcontac>
+  </idinfo>
+  <dataqual>
+    <attracc>
+      <attraccr>No formal attribute accuracy tests were conducted</attraccr>
+    </attracc>
+    <logic>No formal logical accuracy tests were conducted</logic>
+    <complete>Dataset is considered complete for the information presented, as described in the abstract. Users are advised to read the associated metadata records carefully for additional details</complete>
+	<posacc>
+      <horizpa>
+        <horizpar>No formal positional accuracy tests were conducted</horizpar>
+      </horizpa>
+      <vertacc>
+        <vertaccr>No formal positional accuracy tests were conducted</vertaccr>
+      </vertacc>
+    </posacc>
+  </dataqual>
+  <eainfo>
+    <detailed>
+      <enttyp>
+        <enttypl>basin_characteristics.csv</enttypl>
+        <enttypd>Comma Separated Value (CSV) file. This is described as the individual rows required in the file.</enttypd>
+        <enttypds>must follow example format</enttypds>
+      </enttyp>
+      <attr>
+        <attrlabl>headers</attrlabl>
+        <attrdefs>Required column heading for file</attrdefs>
+		<attrdomv>
+				<rdom>
+				  <rdomv>name</rdomv>
+				  <rdomvds>Parameter name</rdomvds>
+				</rdom>
+			  </attrdomv>
+			  <attrdomv>
+				<rdom>
+				  <rdomv>value</rdomv>
+				  <rdomvds>Numerical value of parameter</rdomvds>
+				</rdom>
+			  </attrdomv>
+			  <attrdomv>
+				<rdom>
+				  <rdomv>units</rdomv>
+				  <rdomvds>Units for parameter</rdomvds>
+				</rdom>
+			  </attrdomv>
+			  <attrdomv>
+				<rdom>
+				  <rdomv>description</rdomv>
+				  <rdomvds>General description of parameter</rdomvds>
+				</rdom>
+			  </attrdomv>
+      </attr>
+	  <attr>
+        <attrlabl>scaling_parameter</attrlabl>
+		<attrdef>Integrates soil thickness, porosity, and hydraulic conductivity to integrate basin topography and soil characteristics</attrdef>
+        <attrdefs>Available From Database</attrdefs>
+		<attrunit>millimeters</attrunit>
+      </attr>
+	  <attr>
+        <attrlabl>saturated_hydraulic_conductivity</attrlabl>
+		<attrdef>Saturated hydraulic conductivity of soil profile</attrdef>
+        <attrdefs>Available From Database</attrdefs>
+		<attrunit>millimeters per day</attrunit>
+      </attr>
+	  <attr>
+        <attrlabl>saturated_hydraulic_conductivity_multiplier</attrlabl>
+		<attrdef>Controls the rate of decline of conductivity in the soil profile</attrdef>
+        <attrdefs>Available From Database</attrdefs>
+		<attrunit>unitless</attrunit>
+      </attr>
+	  <attr>
+        <attrlabl>soil_depth_total</attrlabl>
+		<attrdef>Thickness of hydrologically-active soil</attrdef>
+        <attrdefs>Available From Database</attrdefs>
+		<attrunit>millimeters</attrunit>
+      </attr>
+	  <attr>
+        <attrlabl>field_capacity_fraction</attrlabl>
+		<attrdef>proportion of soil profile that retains water at field capacity; characterizes soil-water retained after gravity drainage</attrdef>
+        <attrdefs>Available From Database</attrdefs>
+		<attrunit>fraction</attrunit>
+      </attr>
+	  <attr>
+        <attrlabl>porosity_fraction</attrlabl>
+		<attrdef>proportion of soil profile that is pore space</attrdef>
+        <attrdefs>Available From Database</attrdefs>
+		<attrunit>fraction</attrunit>
+      </attr>
+	  <attr>
+        <attrlabl>wilting_point_fraction</attrlabl>
+		<attrdef>proportion of soil profile that retains water at wilting point; this water is not available to plants and this porosity does not provide for storm response</attrdef>
+        <attrdefs>Available From Database</attrdefs>
+		<attrunit>fraction</attrunit>
+      </attr>
+	  <attr>
+        <attrlabl>latitude</attrlabl>
+		<attrdef>mean latitude of basin</attrdef>
+        <attrdefs>Determined during geospatial sampling; used to calculate potential evapotranspiration</attrdefs>
+		<attrunit>degrees</attrunit>
+      </attr>
+	  <attr>
+        <attrlabl>basin_area_total</attrlabl>
+		<attrdef>total basin area</attrdef>
+        <attrdefs>Determined during geospatial sampling; used to convert water budget (in millimeters) to a streamflow volume</attrdefs>
+		<attrunit>square kilometers</attrunit>
+      </attr>
+	  <attr>
+        <attrlabl>impervious_area_fraction</attrlabl>
+		<attrdef>Impervious area of basin; used to calculate runoff from impervious surface</attrdef>
+        <attrdefs>Available From Database</attrdefs>
+		<attrunit>percentage</attrunit>
+      </attr>
+	  <attr>
+        <attrlabl>channel_length_max</attrlabl>
+		<attrdef>Estimate used to initialize simulation</attrdef>
+        <attrdefs>Producer Defined</attrdefs>
+		<attrunit>kilometers</attrunit>
+      </attr>
+	  <attr>
+        <attrlabl>channel_velocity_avg</attrlabl>
+		<attrdef>Estimate used to initialize simulation</attrdef>
+        <attrdefs>Producer Defined</attrdefs>
+		<attrunit>kilometers per day</attrunit>
+      </attr>
+	  <attr>
+        <attrlabl>flow_initial</attrlabl>
+		<attrdef>Estimate used to initialize simulation</attrdef>
+        <attrdefs>Producer Defined</attrdefs>
+		<attrunit>millimeters per day</attrunit>
+      </attr>
+	  <attr>
+        <attrlabl>lake_area</attrlabl>
+		<attrdef>Total waterbody surface area</attrdef>
+        <attrdefs>Determined during geospatial sampling</attrdefs>
+		<attrunit>square kilometers</attrunit>
+      </attr>
+	  <attr>
+        <attrlabl>up_lake_area</attrlabl>
+		<attrdef>Basin area upstream of water bodies</attrdef>
+        <attrdefs>Determined during geospatial sampling</attrdefs>
+		<attrunit>square kilometers</attrunit>
+      </attr>
+	  <attr>
+        <attrlabl>rip_area</attrlabl>
+		<attrdef>Area of stream corridor</attrdef>
+        <attrdefs>Determined during geospatial sampling</attrdefs>
+		<attrunit>square kilometers</attrunit>
+      </attr>
+	 #tnw - items below here need to move to parameters
+	 <attr>
+        <attrlabl>lake_delay</attrlabl>
+		<attrdef>Estimated time for water to move through lake measured in days: 15, 1.5, 1.5</attrdef>
+        <attrdefs>Available From Database</attrdefs>
+		<attrunit>days</attrunit>
+      </attr>
+	  <attr>
+        <attrlabl>eff_imp</attrlabl>
+		<attrdef>Used to decrease the percent impervious in landscapes that are forested: 0.7, 1, 1</attrdef>
+        <attrdefs>Available From Database</attrdefs>
+		<attrunit>percentage</attrunit>
+      </attr>
+	  <attr>
+        <attrlabl>imp_delay</attrlabl>
+		<attrdef>Proportion of precipitation delayed to next day from impervious surface and associated runoff; 0.1, 0.5, 0.1</attrdef>
+        <attrdefs>Available From Database</attrdefs>
+		<attrunit>decimal</attrunit>
+      </attr>
+	  <attr>
+        <attrlabl>twi_adj</attrlabl>
+		<attrdef>Used to decrease importance of topography in developed landscapes; 1,1,0.5</attrdef>
+        <attrdefs>Available From Database</attrdefs>
+		<attrunit>unitless</attrunit>
+      </attr>
+	  <attr>
+        <attrlabl>et_exp_dorm</attrlabl>
+		<attrdef>minimizes evapotranspiration during dormant season; 5</attrdef>
+        <attrdefs>Available From Database</attrdefs>
+		<attrunit>unitless</attrunit>
+      </attr>
+	  <attr>
+        <attrlabl>et_exp_grow</attrlabl>
+		<attrdef>maximizes evapotranspiration during dormant season; 0.5</attrdef>
+        <attrdefs>Available From Database</attrdefs>
+		<attrunit>unitless</attrunit>
+      </attr>
+	  #tnw removed above
+    </detailed>
+    <detailed>
+      <enttyp>
+        <enttypl>twi.csv</enttypl>
+        <enttypd>Comma Separated Value (CSV) file containing a 30-bin distribution of the tophographic wetness index of the basin. This proportional distribution should be in the decimal form and the cell distribution is in percent.</enttypd>
+        <enttypds>Producer Defined</enttypds>
+      </enttyp>
+      <attr>
+        <attrlabl>bin</attrlabl>
+        <attrdefs>Producer Defined</attrdefs>
+        <attrdomv>
+          <rdom>
+            <rdommin>1</rdommin>
+            <rdommax>30</rdommax>
+          </rdom>
+        </attrdomv>
+      </attr>
+      <attr>
+        <attrlabl>twi</attrlabl>
+        <attrdefs>Available from database</attrdefs>
+        <attrdomv>
+          <rdom>
+            <rdommin>0</rdommin>
+            <rdommax>20</rdommax>
+          </rdom>
+        </attrdomv>
+      </attr>
+      <attr>
+        <attrlabl>proportion</attrlabl>
+        <attrdef>sum of the column within 1% of 1.0</attrdef>
+        <attrdefs>From geospatial sampling</attrdefs>
+        <attrdomv>
+          <rdom>
+            <rdommin>0.0001</rdommin>
+            <rdommax>0.30</rdommax>
+          </rdom>
+        </attrdomv>
+      </attr>
+      <attr>
+        <attrlabl>cells</attrlabl>
+        <attrdefs>From geospatial sampling</attrdefs>
+        <attrdomv>
+          <rdom>
+            <rdommin>0.01</rdommin>
+            <rdommax>30</rdommax>
+          </rdom>
+        </attrdomv>
+      </attr>
+    </detailed>
+<detailed>
+      <enttyp>
+        <enttypl>parameters_***.csv</enttypl>
+        <enttypd>Comma Separated Value (CSV) file containing data.</enttypd>
+        <enttypds>Producer defined and specific to majority land cover (Forested, Agricultural, Developed).  This is described as the individual rows required in the parameter file.</enttypds>
+      </enttyp>
+<attr>
+        <attrlabl>headers</attrlabl>
+        <attrdefs>Required column heading for file</attrdefs>
+		<attrdomv>
+				<rdom>
+				  <rdomv>name</rdomv>
+				  <rdomvds>Parameter name</rdomvds>
+				</rdom>
+			  </attrdomv>
+			  <attrdomv>
+				<rdom>
+				  <rdomv>value</rdomv>
+				  <rdomvds>Numerical value of parameter</rdomvds>
+				</rdom>
+			  </attrdomv>
+			  <attrdomv>
+				<rdom>
+				  <rdomv>units</rdomv>
+				  <rdomvds>Units for parameter</rdomvds>
+				</rdom>
+			  </attrdomv>
+			  <attrdomv>
+				<rdom>
+				  <rdomv>description</rdomv>
+				  <rdomvds>General description of parameter</rdomvds>
+				</rdom>
+			  </attrdomv>
+      </attr>	  
+ <attr>
+  <attrlabl>spatial_coeff</attrlabl>
+		<attrdef>used to optimize the scaling parameter</attrdef>
+		<attrunit>dimensionless</attrunit>
+			 <attrdomv>
+				<rdom>
+				  <rdomv>0.4</rdomv>
+				  <rdomvds>Forested</rdomvds>
+				</rdom>
+			  </attrdomv>
+			  <attrdomv>
+				<rdom>
+				  <rdomv>0.3</rdomv>
+				  <rdomvds>Agricultural</rdomvds>
+				</rdom>
+			  </attrdomv>
+			  <attrdomv>
+				<rdom>
+				  <rdomv>0.25</rdomv>
+				  <rdomvds>Developed</rdomvds>
+				</rdom>
+			  </attrdomv>
+ </attr>
+	   <attr>
+  <attrlabl>rooting_depth_factor</attrlabl>
+	<attrdef>proportion of soil thickness used for evapotranspiration</attrdef>
+	<attrunit>dimensionless</attrunit>
+			 <attrdomv>
+				<rdom>
+				  <rdomv>0.75</rdomv>
+				  <rdomvds>Forested</rdomvds>
+				</rdom>
+			  </attrdomv>
+			  <attrdomv>
+				<rdom>
+				  <rdomv>0.25</rdomv>
+				  <rdomvds>Agricultural</rdomvds>
+				</rdom>
+			  </attrdomv>
+			  <attrdomv>
+				<rdom>
+				  <rdomv>0.75</rdomv>
+				  <rdomvds>Developed</rdomvds>
+				</rdom>
+			  </attrdomv>
+      </attr>
+  <attr>
+  <attrlabl>macropore_fraction</attrlabl>
+	<attrdef>fraction of precipitation that can bypass the unsaturated subsurface zone and move directly into the saturated subsurface zone</attrdef>
+	<attrunit>fraction</attrunit>
+			 <attrdomv>
+				<rdom>
+				  <rdomv>0.15</rdomv>
+				  <rdomvds>Forested</rdomvds>
+				</rdom>
+			  </attrdomv>
+			  <attrdomv>
+				<rdom>
+				  <rdomv>0.15</rdomv>
+				  <rdomvds>Agricultural</rdomvds>
+				</rdom>
+			  </attrdomv>
+			  <attrdomv>
+				<rdom>
+				  <rdomv>0.2</rdomv>
+				  <rdomvds>Developed</rdomvds>
+				</rdom>
+			  </attrdomv>
+      </attr>
+ <attr>
+  <attrlabl>impervious_curve_number</attrlabl>
+	<attrdef>TR55 parameter</attrdef>
+	<attrunit>dimensionless</attrunit>
+			 <attrdomv>
+				<rdom>
+				  <rdomv>90</rdomv>
+				  <rdomvds>Forested</rdomvds>
+				</rdom>
+			  </attrdomv>
+			  <attrdomv>
+				<rdom>
+				  <rdomv>90</rdomv>
+				  <rdomvds>Agricultural</rdomvds>
+				</rdom>
+			  </attrdomv>
+			  <attrdomv>
+				<rdom>
+				  <rdomv>100</rdomv>
+				  <rdomvds>Developed</rdomvds>
+				</rdom>
+			  </attrdomv>
+ </attr>
+ <attr>
+  <attrlabl>snowmelt_temperature_cutoff</attrlabl>
+	<attrdef>temperature cutoff for snowpack accumulation and snowmelt</attrdef>
+	<attrunit>degrees Celsius</attrunit>
+		<rdomv>0</rdomv>
+ </attr>
+ <attr>
+  <attrlabl>snowmelt_rate_coeff</attrlabl>
+	<attrdef>used to control rate of snow melt</attrdef>
+	<attrunit>millimeters per degrees Celsius per day</attrunit>
+			 <attrdomv>
+				<rdom>
+				  <rdomv>0.2</rdomv>
+				  <rdomvds>Forested</rdomvds>
+				</rdom>
+			  </attrdomv>
+			  <attrdomv>
+				<rdom>
+				  <rdomv>0.2</rdomv>
+				  <rdomvds>Agricultural</rdomvds>
+				</rdom>
+			  </attrdomv>
+			  <attrdomv>
+				<rdom>
+				  <rdomv>0.4</rdomv>
+				  <rdomvds>Developed</rdomvds>
+				</rdom>
+			  </attrdomv>
+ </attr>
+ <attr>
+  <attrlabl>snowmelt_rate_coeff_with_rain</attrlabl>
+	<attrdef>Controls rate of snow melt when raining</attrdef>
+	<attrunit>millimeters per degrees Celsius per day</attrunit>
+			 <attrdomv>
+				<rdom>
+				  <rdomv>0.3</rdomv>
+				  <rdomvds>Forested</rdomvds>
+				</rdom>
+			  </attrdomv>
+			  <attrdomv>
+				<rdom>
+				  <rdomv>0.4</rdomv>
+				  <rdomvds>Agricultural</rdomvds>
+				</rdom>
+			  </attrdomv>
+			  <attrdomv>
+				<rdom>
+				  <rdomv>0.6</rdomv>
+				  <rdomvds>Developed</rdomvds>
+				</rdom>
+			  </attrdomv>
+ </attr>
+ <attr>
+  <attrlabl>pet_calib_coeff</attrlabl>
+	<attrdef>Adjusts potential evapotranspiration for regional conditions</attrdef>
+	<attrunit>dimensionless</attrunit>
+			 <attrdomv>
+				<rdom>
+				  <rdomv>1.2</rdomv>
+				  <rdomvds>Forested</rdomvds>
+				</rdom>
+			  </attrdomv>
+			  <attrdomv>
+				<rdom>
+				  <rdomv>1.2</rdomv>
+				  <rdomvds>Agricultural</rdomvds>
+				</rdom>
+			  </attrdomv>
+			  <attrdomv>
+				<rdom>
+				  <rdomv>1.2</rdomv>
+				  <rdomvds>Developed</rdomvds>
+				</rdom>
+			  </attrdomv>
+ </attr>
+ <attr>
+	<attrlabl>lake_delay</attrlabl>
+		<attrdef>Estimated time for water to move through lake</attrdef>
+		<attrunit>days</attrunit>
+		<attrdomv>
+				<rdom>
+				  <rdomv>15</rdomv>
+				  <rdomvds>Forested</rdomvds>
+				</rdom>
+			  </attrdomv>
+			  <attrdomv>
+				<rdom>
+				  <rdomv>1.5</rdomv>
+				  <rdomvds>Agricultural</rdomvds>
+				</rdom>
+			  </attrdomv>
+			  <attrdomv>
+				<rdom>
+				  <rdomv>1.5</rdomv>
+				  <rdomvds>Developed</rdomvds>
+				</rdom>
+			  </attrdomv>
+  </attr>
+  <attr>
+	<attrlabl>eff_imp</attrlabl>
+		<attrdef>Used to decrease the percent impervious in landscapes that are forested</attrdef>
+		<attrunit>percentage</attrunit>
+		<attrdomv>
+				<rdom>
+				  <rdomv>0.7</rdomv>
+				  <rdomvds>Forested</rdomvds>
+				</rdom>
+			  </attrdomv>
+			  <attrdomv>
+				<rdom>
+				  <rdomv>1</rdomv>
+				  <rdomvds>Agricultural</rdomvds>
+				</rdom>
+			  </attrdomv>
+			  <attrdomv>
+				<rdom>
+				  <rdomv>1</rdomv>
+				  <rdomvds>Developed</rdomvds>
+				</rdom>
+			  </attrdomv>
+  </attr>
+  <attr>
+	<attrlabl>imp_delay</attrlabl>
+		<attrdef>Proportion of precipitation delayed to next day from impervious surface and associated runoff</attrdef>
+		<attrunit>decimal</attrunit>
+		<attrdomv>
+				<rdom>
+				  <rdomv>0.1</rdomv>
+				  <rdomvds>Forested</rdomvds>
+				</rdom>
+			  </attrdomv>
+			  <attrdomv>
+				<rdom>
+				  <rdomv>0.5</rdomv>
+				  <rdomvds>Agricultural</rdomvds>
+				</rdom>
+			  </attrdomv>
+			  <attrdomv>
+				<rdom>
+				  <rdomv>0.1</rdomv>
+				  <rdomvds>Developed</rdomvds>
+				</rdom>
+			  </attrdomv>
+  </attr>
+  <attr>
+	<attrlabl>twi_adj</attrlabl>
+		<attrdef>Used to decrease importance of topography in developed landscapes</attrdef>
+		<attrunit>unitless</attrunit>
+		<attrdomv>
+				<rdom>
+				  <rdomv>1</rdomv>
+				  <rdomvds>Forested</rdomvds>
+				</rdom>
+			  </attrdomv>
+			  <attrdomv>
+				<rdom>
+				  <rdomv>1</rdomv>
+				  <rdomvds>Agricultural</rdomvds>
+				</rdom>
+			  </attrdomv>
+			  <attrdomv>
+				<rdom>
+				  <rdomv>0.5</rdomv>
+				  <rdomvds>Developed</rdomvds>
+				</rdom>
+			  </attrdomv>
+  </attr>
+  <attr>
+	<attrlabl>et_exp_dorm</attrlabl>
+		<attrdef>minimizes evapotranspiration during dormant season</attrdef>
+		<attrunit>unitless</attrunit>
+		<attrdomv>
+				<rdom>
+				  <rdomv>5</rdomv>
+				</rdom>
+      </attr>
+	  <attr>
+        <attrlabl>et_exp_grow</attrlabl>
+		<attrdef>maximizes evapotranspiration during dormant season</attrdef>
+        <attrunit>unitless</attrunit>
+		<attrdomv>
+				<rdom>
+				  <rdomv>0.5</rdomv>
+				</rdom>
+      </attr>
+    </detailed>
+	<detailed>
+      <enttyp>
+        <enttypl>output.csv</enttypl>
+        <enttypd>Comma Separated Value (CSV) file containing simulation results from tool.</enttypd>
+        <enttypds>Producer Defined</enttypds>
+      </enttyp>
+      <attr>
+        <attrlabl>date</attrlabl>
+        <attrdef>Date pulled from the timeseries file provided during input.</attrdef>
+        <attrdefs>Producer Defined</attrdefs>
+          <attrunit>Date in the format of mm/dd/yyyy.</attrunit>
+      </attr>
+      <attr>
+        <attrlabl>temperature (celsius)</attrlabl>
+        <attrdef>Pulled from timeseries.</attrdef>
+        <attrdefs>Producer Defined</attrdefs>
+        <attrunit>Celsius</attrunit>
+      </attr>
+      <attr>
+        <attrlabl>precipitation (mm/day)</attrlabl>
+        <attrdef>Pulled from timeseries.</attrdef>
+        <attrdefs>Producer Defined</attrdefs>
+		<rdommin>0.0</rdommin>
+        <attrunit>millimeters/day</attrunit>
+      </attr>
+      <attr>
+        <attrlabl>flow_observed (mm/day)</attrlabl>
+        <attrdef>Optionally included with climate file for statistical evaluation.</attrdef>
+        <attrdefs>Producer Defined</attrdefs>
+		<rdommin>0.0</rdommin>
+        <attrunit>mm/day</attrunit>
+      </attr>
+      <attr>
+        <attrlabl>pet (mm/day)</attrlabl>
+        <attrdef>potential evapotranspiration</attrdef>
+        <attrdefs>Either pulled from climate file input (if provided by user) or calculated within the simulation </attrdefs>
+			<rdommin>0.0</rdommin>
+            <attrunit>mm/day</attrunit>
+      </attr>
+      <attr>
+        <attrlabl>aet (mm/day)</attrlabl>
+        <attrdef>Actual evapotranspiration </attrdef>
+        <attrdefs>Calculated within the simulation</attrdefs>
+            <rdommin>0.0</rdommin>
+            <attrunit>mm/day</attrunit>
+      </attr>
+      <attr>
+        <attrlabl>precip_minus_pet (mm/day)</attrlabl>
+        <attrdef>Precipitation minus Potential Evapotranspiration (PET); determines if there is precipitation for recharge.</attrdef>
+        <attrdefs>Calculated within the simulation</attrdefs>
+            <attrunit>mm/day</attrunit>
+      </attr>
+      <attr>
+        <attrlabl>infiltration (mm/day)</attrlabl>
+        <attrdef>Amount of new water infiltrated into soil</attrdef>
+        <attrdefs>Calculated within the simulation</attrdefs>
+            <rdommin>0.0</rdommin>
+            <attrunit>mm/day</attrunit>
+      </attr>
+      <attr>
+        <attrlabl>infiltration_excess</attrlabl>
+        <attrdef>Quantity of infiltration-excess overland flow</attrdef>
+        <attrdefs>Calculated within the simulation</attrdefs>
+            <rdommin>0.0</rdommin>
+            <attrunit>mm/day</attrunit>
+      </attr>
+      <attr>
+        <attrlabl>karst_flow</attrlabl>
+        <attrdef>Quantity of water bypassing root zone as a function of sinkhole distribution</attrdef>
+        <attrdefs>Calculated within the simulation</attrdefs>
+            <rdommin>0.0</rdommin>
+            <attrunit>millimeters/day</attrunit>
+      </attr>
+      <attr>
+        <attrlabl>imp_flow</attrlabl>
+        <attrdef>Flow from the impervious surface</attrdef>
+        <attrdefs>Calculated within the simulation</attrdefs>
+		<rdommin>0.0</rdommin>
+		</attr>
+      <attr>
+        <attrlabl>root_zone_avg</attrlabl>
+        <attrdef>Average soil-water storage in root zone</attrdef>
+        <attrdefs>Calculated within the simulation</attrdefs>
+        <rdommin>0</rdommin>
+        <rdommax>porosity x root-zone thickness</rdommax>
+            <attrunit>millimeters</attrunit>
+          </rdom>
+        </attrdomv>
+      </attr>
+      <attr>
+        <attrlabl>flow_predicted (mm/day)</attrlabl>
+        <attrdef>Daily sum of simulated streamflow </attrdef>
+        <attrdefs>Calculated within the simulation</attrdefs>
+			<rdommin>0</rdommin>
+            <attrunit>millimeters/day</attrunit>
+      </attr>
+      <attr>
+        <attrlabl>flow_predicted maximum (mm/hour)</attrlabl>
+        <attrdef>Daily maximum of hourly-simulated streamflow</attrdef>
+        <attrdefs>Calculated within the simulation</attrdefs>
+            <rdommin>0</rdommin>
+            <attrunit>millimeters/hour</attrunit>
+      </attr>
+      <attr>
+        <attrlabl>flow_predicted minimum (mm/hour)</attrlabl>
+                <attrdef>Daily minimum of hourly-simulated streamflow</attrdef>
+        <attrdefs>Calculated within the simulation</attrdefs>
+            <rdommin>0</rdommin>
+            <attrunit>millimeters/hour</attrunit>
+      </attr>
+      <attr>
+        <attrlabl>flow_predicted median (mm/hour)</attrlabl>
+                <attrdef>Daily median of hourly-simulated streamflow</attrdef>
+        <attrdefs>Calculated within the simulation</attrdefs>
+            <rdommin>0</rdommin>
+            <attrunit>millimeters/hour</attrunit>
+      </attr>
+      <attr>
+        <attrlabl>flow_predicted average (mm/hour)</attrlabl>
+                <attrdef>Daily mean of hourly-simulated streamflow</attrdef>
+        <attrdefs>Calculated within the simulation</attrdefs>
+            <rdommin>0</rdommin>
+            <attrunit>millimeters/hour</attrunit>
+      </attr>
+      <attr>
+        <attrlabl>discharge_predicted maximum (cfs)</attrlabl>
+        <attrdef>Daily maximum of hourly-simulated streamflow</attrdef>
+        <attrdefs>Converted from mm per hour using basin area</attrdefs>
+            <rdommin>0</rdommin>
+            <attrunit>cubic feet per second</attrunit>
+      </attr>
+      <attr>
+        <attrlabl>discharge_predicted minimum (cfs)</attrlabl>
+                <attrdef>Daily minimum of hourly-simulated streamflow</attrdef>
+        <attrdefs>Converted from mm per hour using basin area</attrdefs>
+            <rdommin>0</rdommin>
+            <attrunit>cubic feet per second</attrunit>
+      </attr>
+      <attr>
+        <attrlabl>discharge_predicted median (cfs)</attrlabl>
+               <attrdef>Daily median of hourly-simulated streamflow</attrdef>
+        <attrdefs>Converted from mm per hour using basin area</attrdefs>
+            <rdommin>0</rdommin>
+            <attrunit>cubic feet per second</attrunit>
+      </attr>
+      <attr>
+        <attrlabl>discharge_predicted average (cfs)</attrlabl>
+        <attrdef>Daily mean of hourly-simulated streamflow</attrdef>
+        <attrdefs>Converted from mm per hour using basin area</attrdefs>
+            <rdommin>0</rdommin>
+            <attrunit>cubic feet per second</attrunit>
+      </attr>
+      <attr>
+        <attrlabl>saturation_deficit_avgs (mm)</attrlabl>
+        <attrdef>Open pore space available to store water in the total soil thickness averaged for all TWI bins.  A value of 0 means that all pore space is filled.  </attrdef>
+        <attrdefs>Calculated within the simulation</attrdefs>
+            <rdommin>0</rdommin>
+            <rdommax>porosity x total soil thickness</rdommax>
+            <attrunit>millimeters</attrunit>
+          </rdom>
+        </attrdomv>
+      </attr>
+      <attr>
+        <attrlabl>sat_overland_flow</attrlabl>
+        <attrdef>Overland flow from exfiltration after soil is saturated</attrdef>
+        <attrdefs>Calculated within the simulation</attrdefs>
+            <rdommin>0.0</rdommin>
+            <attrunit>millimeters/day</attrunit>
+      </attr>
+      <attr>
+        <attrlabl>return_flow</attrlabl>
+        <attrdef>Quantity of water that re-infiltrates into the soil</attrdef>
+        <attrdefs>Calculated within the simulation</attrdefs>
+            <rdommin>0.0</rdommin>
+            <attrunit>millimeters/day</attrunit>
+      </attr>
+    </detailed>
+	<detailed>
+      <enttyp>
+        <enttypl>output_saturation_deficit_locals.csv</enttypl>
+        <enttypd>Comma Separated Value (CSV) file containing simulation results from tool.</enttypd>
+        <attrdef>Bin-specific values of open pore space available to store water in the total soil thickness. A value of 0 means that all pore space is filled.</attrdef>
+        <attrdefs>Calculated within the simulation</attrdefs>
+            <rdommin>0</rdommin>
+            <rdommax>porosity x total soil thickness</rdommax>
+            <attrunit>millimeters</attrunit>
+			<enttypds>Producer Defined</enttypds>
+      </enttyp>
+       <attr>
+        <attrlabl>date</attrlabl>
+        <attrdef>Date pulled from the timeseries file provided during input.</attrdef>
+        <attrdefs>Producer Defined</attrdefs>
+        <attrdomv>
+          <udom>Date in the format of mm/dd/yyyy</udom>
+        </attrdomv>
+      </attr>
+      <attr>
+        <attrlabl>bin_#</attrlabl>
+        <attrdef>Lower bin numbers indicate drier landscape positions. 30 bins total.</attrdef>
+        <attrdefs>Producer Defined</attrdefs>
+      </attr>
+    </detailed>
+  </eainfo>
+    <distinfo>
+    <distrib>
+      <cntinfo>
+        <cntperp>
+          <cntper>Tanja N. Williamson</cntper>
+          <cntorg>MIDCONTINENT REGION: OHIO-KENTUCKY-INDIANA WSC</cntorg>
+        </cntperp>
+        <cntpos>Research Hydrologist</cntpos>
+        <cntaddr>
+          <addrtype>mailing and physical</addrtype>
+          <address>9818 Bluegrass Parkway</address>
+          <city>Louisville</city>
+          <state>KY</state>
+          <postal>40299-1906</postal>
+          <country>United States</country>
+        </cntaddr>
+        <cntvoice>502-493-1934</cntvoice>
+        <cntemail>tnwillia@usgs.gov</cntemail>
+      </cntinfo>
+    </distrib>
+    <distliab>Any use of trade, firm, or product names is for descriptive purposes only and does not imply endorsement by the U.S. Government. Although this information product, for the most part, is in the public domain, it may contain copyrighted materials. Permission to reproduce copyrighted items must be secured from the copyright owner. The data have been approved for release by the U.S. Geological Survey (USGS). Although the data have been subjected to rigorous review and are substantially complete, the USGS reserves the right to revise the data pursuant to further analysis and review. Furthermore, the data are released on the condition that neither the USGS nor the U.S. Government may be held liable for any damages resulting from authorized or unauthorized use. Although these data have been processed successfully on a computer system at the U.S. Geological Survey (USGS), no warranty expressed or implied is made regarding the display or utility of the data for other purposes, nor on all computer systems, nor shall the act of distribution constitute any such warranty. The USGS or the U.S. Government shall not be held liable for improper or incorrect use of the data described and/or contained herein. Users of these data are advised to read all metadata and associated documentation thoroughly to understand appropriate use and data limitations.</distliab>
+    <techpreq>This zip file contains data in Climate and Forecast-Network Common Data Form (CF-netCDF) that were developed for use with the WATERpy hydrologic model.  When the database is downloaded please note the file structure of the climate data must not change for the tool to run.  The user must have the ability to utilize these file formats if they are to be used independently.</techpreq>
+  </distinfo>  
+  <metainfo>
+    <metd>20210823</metd>
+    <metc>
+      <cntinfo>
+        <cntperp>
+          <cntper>Tanja N. Williamson</cntper>
+          <cntorg>MIDCONTINENT REGION: OHIO-KENTUCKY-INDIANA WSC</cntorg>
+        </cntperp>
+        <cntpos>Research Hydrologist</cntpos>
+        <cntaddr>
+          <addrtype>mailing and physical</addrtype>
+          <address>9818 Bluegrass Parkway</address>
+          <city>Louisville</city>
+          <state>KY</state>
+          <postal>40299-1906</postal>
+          <country>United States</country>
+        </cntaddr>
+        <cntvoice>502-493-1934</cntvoice>
+        <cntemail>tnwillia@usgs.gov</cntemail>
+      </cntinfo>
+    </metc>
+    <metstdn>Content Standard for Digital Geospatial Metadata</metstdn>
+    <metstdv>FGDC-STD-001-1998</metstdv>
+  </metainfo>
+</metadata>
+
+ 
